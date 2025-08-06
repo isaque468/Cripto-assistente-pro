@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cripto Assistente PRO</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Cripto Assistente PRO</h1>
+            <p>Análises inteligentes de criptomoedas com IA</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab(event, 'crypto-search')">
+                🔍 Pesquisar Crypto
+            </button>
+            <button class="tab" onclick="switchTab(event, 'market-analysis')">
+                📊 Análise de Mercado
+            </button>
+            <button class="tab" onclick="switchTab(event, 'portfolio')">
+                💼 Meu Portfólio
+            </button>
+        </div>
+
+        <div class="tab-content">
+            <!-- Aba Pesquisar Crypto -->
+            <div id="crypto-search" class="tab-pane active">
+                <div class="search-section">
+                    <h3>🔍 Pesquisar Criptomoeda Específica</h3>
+                    <div class="search-box">
+                        <input
+                            type="text"
+                            class="search-input"
+                            id="crypto-input"
+                            placeholder="Digite o nome da criptomoeda (ex: Bitcoin, Ethereum, Solana...)"
+                        >
+                        <button class="btn" onclick="searchCrypto()">
+                            Analisar
+                        </button>
+                    </div>
+                    <div class="example-text">
+                        💡 Exemplos: Bitcoin, Ethereum, Solana, Cardano, Polygon, Chainlink, etc.
+                    </div>
+                </div>
+
+                <div class="alert alert-info">
+                    <strong>💡 Dica:</strong> Digite o nome completo ou símbolo da criptomoeda para obter uma análise detalhada com preços, tendências e estratégias de trading.
+                </div>
+
+                <h4>🔥 Criptomoedas Populares</h4>
+                <div class="crypto-suggestions">
+                    <div class="crypto-suggestion" onclick="selectCrypto('Bitcoin')">
+                        ₿ Bitcoin
+                    </div>
+                    <div class="crypto-suggestion" onclick="selectCrypto('Ethereum')">
+                        Ξ Ethereum
+                    </div>
+                    <div class="crypto-suggestion" onclick="selectCrypto('Solana')">
+                        ◎ Solana
+                    </div>
+                    <div class="crypto-suggestion" onclick="selectCrypto('Cardano')">
+                        ₳ Cardano
+                    </div>
+                    <div class="crypto-suggestion" onclick="selectCrypto('Polygon')">
+                        ⬢ Polygon
+                    </div>
+                    <div class="crypto-suggestion" onclick="selectCrypto('Chainlink')">
+                        🔗 Chainlink
+                    </div>
+                    <div class="crypto-suggestion" onclick="selectCrypto('Avalanche')">
+                        🔺 Avalanche
+                    </div>
+                    <div class="crypto-suggestion" onclick="selectCrypto('Polkadot')">
+                        ⬢ Polkadot
+                    </div>
+                    <div class="crypto-suggestion" onclick="selectCrypto('Litecoin')">
+                        Ł Litecoin
+                    </div>
+                    <div class="crypto-suggestion" onclick="selectCrypto('Dogecoin')">
+                        Ð Dogecoin
+                    </div>
+                </div>
+
+                <div id="crypto-results"></div>
+            </div>
+
+            <!-- Aba Análise de Mercado -->
+            <div id="market-analysis" class="tab-pane">
+                <div class="search-section">
+                    <h3>📊 Análise de Setores</h3>
+                    <div class="alert alert-info">
+                        <strong>📈 Análise de Mercado:</strong> Escolha um setor para obter insights sobre tendências, oportunidades e riscos.
+                    </div>
+                </div>
+
+                <div class="quick-options">
+                    <div class="option-card" onclick="selectSector('Análise Geral de Criptomoedas')">
+                        <h4>🌐 Análise Geral</h4>
+                        <p>Panorama completo do mercado</p>
+                    </div>
+                    <div class="option-card" onclick="selectSector('DeFi')">
+                        <h4>🏦 DeFi</h4>
+                        <p>Finanças Descentralizadas</p>
+                    </div>
+                    <div class="option-card" onclick="selectSector('AI Tokens')">
+                        <h4>🤖 AI Tokens</h4>
+                        <p>Inteligência Artificial</p>
+                    </div>
+                    <div class="option-card" onclick="selectSector('Memecoins')">
+                        <h4>🐕 Memecoins</h4>
+                        <p>Moedas Meme</p>
+                    </div>
+                    <div class="option-card" onclick="selectSector('GameFi')">
+                        <h4>🎮 GameFi</h4>
+                        <p>Jogos Blockchain</p>
+                    </div>
+                    <div class="option-card" onclick="selectSector('NFT')">
+                        <h4>🖼️ NFT</h4>
+                        <p>Tokens Não Fungíveis</p>
+                    </div>
+                    <div class="option-card" onclick="selectSector('Web3')">
+                        <h4>🌐 Web3</h4>
+                        <p>Internet Descentralizada</p>
+                    </div>
+                    <div class="option-card" onclick="selectSector('Metaverse')">
+                        <h4>🥽 Metaverse</h4>
+                        <p>Realidade Virtual</p>
+                    </div>
+                </div>
+
+                <div id="market-results"></div>
+            </div>
+
+            <!-- Aba Portfólio -->
+            <div id="portfolio" class="tab-pane">
+                <div class="alert alert-warning">
+                    <strong>🚧 Em Desenvolvimento:</strong> A funcionalidade de portfólio estará disponível em breve!
+                </div>
+
+                <h3>💼 Meu Portfólio</h3>
+                <p>Aqui você poderá:</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>📊 Acompanhar suas criptomoedas</li>
+                    <li>📈 Ver performance em tempo real</li>
+                    <li>⚡ Receber alertas de preço</li>
+                    <li>🎯 Gerenciar stop-loss e take-profit</li>
+                    <li>📱 Sincronizar com exchanges</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
