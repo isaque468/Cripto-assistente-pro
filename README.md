@@ -143,16 +143,6 @@ pydantic>=2.0.0
 - 🔄 Em desenvolvimento: Interface web
 - 🔄 Planejado: Alertas em tempo real
 
-## 🤝 Contribuindo
-
-Contribuições são bem-vindas! Sinta-se à vontade para:
-
-1. Fazer fork do projeto
-2. Criar uma branch para sua feature (`git checkout -b feature/nova-feature`)
-3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
-4. Push para a branch (`git push origin feature/nova-feature`)
-5. Abrir um Pull Request
-
 ## ⚠️ Disclaimer
 
 Este projeto é apenas para fins educacionais e informativos. Não constitui aconselhamento financeiro. Sempre faça suas próprias pesquisas antes de investir em criptomoedas.
